@@ -31,6 +31,7 @@ public class ArrayObjectTest {
      */
     @org.junit.jupiter.api.Test
     public void testTransformArray() {
+        //arrange -- preparar datos
         System.out.println("transformArray");
         Object [] arr1 = new Object[] {1, 2, new Object[]{"3", "4"}};
         //Object[] arr = null;
@@ -38,8 +39,14 @@ public class ArrayObjectTest {
         Object[] result_2 = new Object[arr1.length];
         ArrayObject instance = new ArrayObject();
         Object[] expResult = {1,2,"3","4"};
+        
+        //ACT realizar la accion
         Object[] result = instance.transformArray(arr1, contador, result_2);
+        
+        //Assert  comprobar el resultado
         assertArrayEquals(expResult, result);
     }
+    
+    // TDD vs BDD
     
 }
